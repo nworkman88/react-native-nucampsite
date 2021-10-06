@@ -8,8 +8,7 @@ import Constants from 'expo-constants';
 import { View, Platform } from 'react-native';
 import {createStackNavigator} from 'react-navigation-stack';
 import { createDrawerNavigator } from "react-navigation-drawer";
-import {createAppContainer} from 'react-navigation';
-​
+import { createAppContainer } from 'react-navigation';
 const DirectoryNavigator = createStackNavigator(
     {
         Directory: {screen: Directory},
@@ -31,7 +30,7 @@ const DirectoryNavigator = createStackNavigator(
         }
     }
 );
-​
+
 const HomeNavigator = createStackNavigator(
     {
         Home: { screen: Home}
@@ -49,7 +48,6 @@ const HomeNavigator = createStackNavigator(
         }
     }
 );
-
 const AboutNavigator = createStackNavigator(
     {
         About: { screen: About}
@@ -67,7 +65,6 @@ const AboutNavigator = createStackNavigator(
         }
     }
 );
-
 const ContactNavigator = createStackNavigator(
     {
         Contact: { screen: Contact}
@@ -85,7 +82,7 @@ const ContactNavigator = createStackNavigator(
         }
     }
 );
-​
+
 const MainNavigator = createDrawerNavigator(
     {
         Home: {screen : HomeNavigator},
@@ -100,11 +97,11 @@ const MainNavigator = createDrawerNavigator(
         }
     }
 );
-​
+
 const AppNavigator = createAppContainer(MainNavigator);
-​
+
 class Main extends Component {
-​
+
     render() {
         return (
             <View style={{
@@ -117,5 +114,5 @@ class Main extends Component {
         ); 
     }
 }
-​
+
 export default Main;
