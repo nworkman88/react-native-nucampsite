@@ -8,7 +8,8 @@ import {
   StyleSheet,
   Button,
   Alert,
-  PanResponder
+  PanResponder,
+  Share
 } from "react-native";
 import { Card, Icon, Input, Rating } from "react-native-elements";
 import { connect } from "react-redux";
@@ -73,6 +74,15 @@ function RenderCampsite(props) {
     }
   });
 
+  const shareCampsite = (title, message, url) => {
+    Share.share({
+      title: title,
+      message: `${title}: ${message} ${url}`,
+      url: url
+    }, {
+      dialogTitle: 'Share ' + title
+    });
+  };
   if (campsite) {
     return (
       <Animatable.View
@@ -107,6 +117,8 @@ function RenderCampsite(props) {
               reverse
               onPress={() => props.onShowModal()}
             />
+            
+            
           </View>
         </Card>
       </Animatable.View>
